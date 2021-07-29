@@ -6,7 +6,14 @@ import SideContainer from './components/SideContainer';
 
 const Hello = () => {
   return (
-    <div>
+    <div
+      style={{
+        width: '100vw',
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'row',
+      }}
+    >
       <SideContainer>
         <ul>
           <li>
@@ -15,6 +22,9 @@ const Hello = () => {
           </li>
         </ul>
       </SideContainer>
+      <div style={{ border: '2px solid #f00' }}>
+        <h1>Teste</h1>
+      </div>
     </div>
   );
 };
