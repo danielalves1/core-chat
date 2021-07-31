@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import icon from '../assets/icon.svg';
 import './App.global.css';
-import SideContainer from './components/SideContainer';
+import HeaderChat from './components/HeaderChat';
+import LeftContainer from './components/LeftContainer';
+import RightContainer from './components/RightContainer';
 
 const Hello = () => {
   return (
@@ -14,17 +16,28 @@ const Hello = () => {
         flexDirection: 'row',
       }}
     >
-      <SideContainer>
+      <LeftContainer>
         <ul>
           <li>
             <div>Logo</div>
             <div>Fulano</div>
           </li>
         </ul>
-      </SideContainer>
-      <div style={{ border: '2px solid #f00' }}>
-        <h1>Teste</h1>
-      </div>
+      </LeftContainer>
+      <RightContainer>
+        <HeaderChat
+          data={{
+            photo: 'https://avatars.githubusercontent.com/u/33464352?s=400&v=4',
+            fullname: 'Daniel Alves',
+          }}
+        />
+        <div>
+          <h3>dialog</h3>
+        </div>
+        <div>
+          <h3>footer</h3>
+        </div>
+      </RightContainer>
     </div>
   );
 };
