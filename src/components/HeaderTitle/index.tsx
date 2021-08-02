@@ -1,10 +1,22 @@
 import React from 'react';
-import './style.scss';
 
 const HeaderTitle = () => {
   return (
     <div className="title--bar">
-      <span>Chat</span>
+      <div className="left">
+        <span>Chat</span>
+      </div>
+      <div className="right">
+        <button type="button" className="window-btn">
+          _
+        </button>
+        <button type="button" className="window-btn">
+          □
+        </button>
+        <button type="button" className="window-btn">
+          x
+        </button>
+      </div>
     </div>
   );
 };

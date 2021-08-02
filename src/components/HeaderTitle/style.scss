@@ -4,4 +4,24 @@
   -webkit-app-region: drag;
   height: 30px;
   background-color: $mainBgColor;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 5px;
+  justify-content: space-between;
+  .right {
+    display: flex;
+    gap: 1px;
+    & span {
+      padding: 0 20px;
+    }
+  }
+}
+button.window-btn {
+  height: 30px;
+  padding: 0 15px;
+}
+.window-btn:hover {
+  background-color: #3a4e62;
+  cursor: pointer;
 }
