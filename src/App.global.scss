@@ -2,16 +2,16 @@
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
+@import '~/src/fonts/index.css';
+@import '~/src/colors.scss';
+
 body {
   position: relative;
   color: white;
   height: 100vh;
-  /* background: linear-gradient(200.96deg,
-      #fedc2a -29.09%,
-      #dd5789 51.77%,
-      #7a2c9e 129.35%); */
   background: #f5f5f5;
-  font-family: sans-serif;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   overflow-y: hidden;
   display: flex;
   justify-content: center;
@@ -142,41 +142,21 @@ a:hover {
   transform: rotate(45deg);
 }
 
-/** left Container */
-.left--container {
-  min-width: 50px;
-  width: 310px;
-  background: #2c3e50;
-}
-
-/** end left container */
-
-/** right container */
-.right--container {
-  background-color: #e6eaea;
+.app--container {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  border: 1px solid $mainBgColor;
+  box-sizing: border-box;
 }
 
-/** end right container */
-
-/* Header chat */
-.hc--container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #2c3e50;
-  padding: 8px 15px;
-  background-color: #f5f5f5;
-  font-weight: 800;
+.menu--bar {
+  color: $mainBgColor;
+  padding: 4px 8px;
+  margin-left: -4px !important;
 }
 
-.hc--profile-photo {
-  width: 45px;
-  height: 45px;
-  border-radius: 40px;
-  border: 2px solid #ffffff;
-}
-
-/* end Header chat */
+@import '~/src/components/LeftContainer/style.scss';
+@import '~/src/components/RightContainer/style.scss';
+@import '~/src/components/HeaderChat/style.scss';

@@ -1,0 +1,7 @@
+@import '~/src/colors.scss';
+
+.title--bar {
+  -webkit-app-region: drag;
+  height: 30px;
+  background-color: $mainBgColor;
+}

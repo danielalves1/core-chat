@@ -1,0 +1,8 @@
+@import '~/src/colors.scss';
+
+.right--container {
+  background-color: $chatContainer;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}

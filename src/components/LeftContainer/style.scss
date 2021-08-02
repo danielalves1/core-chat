@@ -1,0 +1,7 @@
+@import '~/src/colors.scss';
+
+.left--container {
+  min-width: 50px;
+  width: 280px;
+  background: $mainBgColor;
+}
