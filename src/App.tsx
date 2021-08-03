@@ -23,19 +23,63 @@ const Hello = () => {
         }}
       >
         <LeftContainer>
-          <ul>
-            <li>
-              <div>Logo</div>
-              <div>Fulano</div>
-            </li>
+          <div className="user">
+            <div className="photo">
+              <img
+                src="https://pbs.twimg.com/profile_images/720270636434763777/dB0QdPId.jpg"
+                alt=""
+              />
+            </div>
+            <div className="info">
+              <span className="name">Harvey Specter</span>
+              <span className="status">TGA Sistemas</span>
+            </div>
+          </div>
+          <ul className="list--contacts">
+            {[
+              {
+                id: 1,
+                name: 'Rachel Zane',
+                status: 'TOTVS',
+                photo: 'https://bit.ly/3A1QNN0',
+              },
+              {
+                id: 2,
+                name: 'Charles Forstman',
+                status: 'Puma Sistemas',
+                photo: 'https://static.accessonline.com/uploads/211846.jpg',
+              },
+              {
+                id: 3,
+                name: 'Donna Pausen',
+                status: 'B&P',
+                photo: 'https://bit.ly/2WJ8CSC',
+              },
+              {
+                id: 4,
+                name: 'Jessica Pearson',
+                status: 'Solução Sistemas',
+                photo: 'https://bit.ly/3ii2Lw2',
+              },
+            ].map((value) => (
+              <li key={String(value.id)}>
+                <div className="photo">
+                  <img src={value.photo} alt={value.name} />
+                </div>
+                <div className="info">
+                  <div className="name">{value.name}</div>
+                  <div className="status">{value.status}</div>
+                </div>
+              </li>
+            ))}
           </ul>
         </LeftContainer>
         <RightContainer>
           <HeaderChat
             data={{
               photo:
-                'https://avatars.githubusercontent.com/u/33464352?s=400&v=4',
-              fullname: 'Daniel Alves',
+                'https://pbs.twimg.com/profile_images/720270636434763777/dB0QdPId.jpg',
+              fullname: 'Harvey Specter',
             }}
           />
           <div>

@@ -20,8 +20,11 @@
 button.window-btn {
   height: 30px;
   padding: 0 15px;
+  background-color: $chatTitleButtonColor;
+  border: none;
+  color: $mainLightColor;
 }
 .window-btn:hover {
-  background-color: #3a4e62;
+  background-color: $chatTitleButtonColor;
   cursor: pointer;
 }
