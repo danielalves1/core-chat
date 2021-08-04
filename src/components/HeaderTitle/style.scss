@@ -9,6 +9,7 @@
   padding: 0 5px;
   justify-content: space-between;
   color: $lightColor;
+  user-select: none;
   .left {
     flex: 1;
     display: flex;
