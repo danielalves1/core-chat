@@ -1,7 +1,9 @@
 import React from 'react';
+import utils from '../../utils';
 
 export interface MainContainerProps {
-  data: Record<string, string>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  data: Record<string, any>;
 }
 
 const HeaderChat = (props: MainContainerProps) => {
@@ -9,11 +11,14 @@ const HeaderChat = (props: MainContainerProps) => {
   return (
     <div className="hc--container">
       <img
-        className="hc--profile-photo"
+        className={`hc--profile-photo ${utils.parseStatus(data.status)}`}
         src={data.photo}
-        alt={data.fullname || ''}
+        alt={data.name || ''}
       />
-      <span>Fulano de Tal</span>
+      <div className="hc--info">
+        <span className="name">{data?.name}</span>
+        <span className="message">{data?.message}</span>
+      </div>
     </div>
   );
 };

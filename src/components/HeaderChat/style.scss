@@ -8,6 +8,21 @@
   padding: 5px 15px;
   background-color: $mainBgLightColor;
   font-weight: 800;
+  .hc--info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    justify-content: center;
+    align-items: flex-start;
+    .name {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .message {
+      font-size: 12px;
+      font-weight: lighter;
+    }
+  }
 }
 
 .hc--profile-photo {
@@ -15,4 +30,5 @@
   height: 45px;
   border-radius: 40px;
   border: 2px solid $mainLightColor;
+  object-fit: cover;
 }

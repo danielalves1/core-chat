@@ -50,15 +50,33 @@
 .list--contacts {
   list-style: none;
   padding: 0;
+  button {
+    display: flex;
+    background: none;
+    border: none;
+    width: 100% !important;
+    justify-content: flex-start;
+    color: $mainLightColor;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background-color: $chatTitleButtonColor;
+    }
+  }
   li {
+    flex: 1;
     display: flex;
     padding: 7px 15px;
     border-bottom: 1px solid #eee2;
+    &.active {
+      border-right: 5px solid $chatTitleButtonColor;
+    }
     div.photo {
       width: 45px;
       height: 45px;
       border-radius: 40px;
-      border: 2px solid;
+      border: 2.5px solid;
       overflow: hidden;
       img {
         width: 100%;
@@ -71,13 +89,17 @@
       flex-direction: column;
       padding: 0 10px;
       justify-content: center;
+      align-items: flex-start;
       .name {
-        font-size: 18px;
-        font-weight: bold;
+        font-size: 15px;
+        font-weight: 500;
       }
-      .status {
+      .message {
+        margin-top: 2px;
         font-size: 12px;
-        font-weight: lighter;
+        font-weight: 300;
+        opacity: 0.7;
+        font-family: 'Roboto Light';
       }
     }
   }

@@ -18,50 +18,8 @@ body {
   align-items: center;
   margin: 0;
   padding: 0;
+  letter-spacing: 0.5px;
 }
-
-// button {
-//   background-color: white;
-//   padding: 10px 20px;
-//   border-radius: 10px;
-//   border: none;
-//   appearance: none;
-//   font-size: 1.3rem;
-//   box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-//     0px 18px 88px -4px rgba(24, 39, 75, 0.14);
-//   transition: transform ease-in 0.1s;
-//   cursor: pointer;
-// }
-
-// button:hover {
-//   transform: scale(1.05);
-// }
-
-// li {
-//   list-style: none;
-// }
-
-// a {
-//   text-decoration: none;
-//   height: fit-content;
-//   width: fit-content;
-//   margin: 10px;
-// }
-
-// a:hover {
-//   opacity: 1;
-//   text-decoration: none;
-// }
-
-// .Hello {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin: 20px 0;
-// }
-
-/* Resizable */
-
 .react-resizable {
   position: relative;
 }
@@ -155,6 +113,19 @@ body {
   color: $mainBgColor;
   padding: 4px 8px;
   margin-left: -4px !important;
+}
+
+.online {
+  border-color: $online !important;
+}
+.offline {
+  border-color: $offline !important;
+}
+.busy {
+  border-color: $busy !important;
+}
+.away {
+  border-color: $away !important;
 }
 
 @import '~/src/components/HeaderTitle/style.scss';
