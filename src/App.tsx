@@ -1,12 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import icon from '../assets/icon.svg';
+import { Search } from '@material-ui/icons';
 import './App.global.scss';
-import utils from './utils';
 import HeaderChat from './components/HeaderChat';
 import HeaderTitle from './components/HeaderTitle';
 import LeftContainer from './components/LeftContainer';
 import RightContainer from './components/RightContainer';
+import utils from './utils';
 
 const Hello = () => {
   return (
@@ -34,6 +35,12 @@ const Hello = () => {
             <div className="info">
               <span className="name">Harvey Specter</span>
               <span className="status">TGA Sistemas</span>
+            </div>
+          </div>
+          <div className="search">
+            <div className="input--adornment">
+              <Search className="icon" />
+              <input placeholder="Search contact" type="text" />
             </div>
           </div>
           <ul className="list--contacts">
