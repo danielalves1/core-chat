@@ -2,7 +2,6 @@ import React from 'react';
 import utils from '../../utils';
 
 export interface MainContainerProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   data: Record<string, any>;
 }
 

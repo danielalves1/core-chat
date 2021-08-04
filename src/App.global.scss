@@ -128,6 +128,45 @@ body {
   border-color: $away !important;
 }
 
+.dialog {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  .message {
+    max-width: 70%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 18px;
+    font-size: 0.9rem;
+    font-family: 'Roboto Light';
+  }
+  .received {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    & .message {
+      background-color: $chatReceiveBgColor;
+      color: $chatReceiveFontColor;
+    }
+  }
+  .sent {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    & .message {
+      background-color: $chatSentBgColor;
+      color: $chatSentFontColor;
+    }
+  }
+  .message--info {
+    display: flex;
+    svg {
+      margin-left: 5px !important;
+    }
+  }
+}
+
 @import '~/src/components/HeaderTitle/style.scss';
 @import '~/src/components/LeftContainer/style.scss';
 @import '~/src/components/RightContainer/style.scss';
