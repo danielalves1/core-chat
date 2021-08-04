@@ -3,11 +3,11 @@
 .left--container {
   min-width: 50px;
   width: 280px;
-  background: $mainBgColor;
+  background: $primaryColor;
   overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 6px;
-    background-color: $chatReceiveBgColor;
+    background-color: $primaryLighterColor;
   }
   &::-webkit-scrollbar-thumb {
     background-color: #999;
@@ -23,7 +23,7 @@
     width: 70px;
     height: 70px;
     border-radius: 40px;
-    border: 2px solid;
+    border: 2px solid $online;
     overflow: hidden;
     img {
       width: 100%;
@@ -36,6 +36,7 @@
     flex-direction: column;
     padding: 0 10px;
     justify-content: center;
+    color: $lightColor;
     .name {
       font-size: 18px;
       font-weight: bold;
@@ -56,12 +57,12 @@
     border: none;
     width: 100% !important;
     justify-content: flex-start;
-    color: $mainLightColor;
+    color: $lightColor;
     outline: none;
     cursor: pointer;
     transition: all 0.3s;
     &:hover {
-      background-color: $chatTitleButtonColor;
+      background-color: $primaryLighterColor;
     }
   }
   li {
@@ -70,7 +71,7 @@
     padding: 7px 15px;
     border-bottom: 1px solid #eee2;
     &.active {
-      border-right: 5px solid $chatTitleButtonColor;
+      border-right: 5px solid $primaryLighterColor;
     }
     div.photo {
       width: 45px;

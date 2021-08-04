@@ -11,7 +11,7 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import path from 'path';
-import { app, BrowserWindow, shell } from 'electron';
+import { app, BrowserWindow, Menu, shell, Tray } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
@@ -71,14 +71,34 @@ const createWindow = async () => {
     show: false,
     width: 1024,
     height: 728,
+    minHeight: 600,
+    minWidth: 1024,
     frame: false,
     icon: getAssetPath('icon.png'),
     webPreferences: {
       nodeIntegration: true,
+      enableRemoteModule: true,
     },
   });
 
   mainWindow.loadURL(`file://${__dirname}/index.html`);
+
+  let appIcon = null;
+  app
+    .whenReady()
+    .then(() => {
+      appIcon = new Tray(`${__dirname}/../assets/icon.png`);
+      const contextMenu = Menu.buildFromTemplate([
+        { label: 'Abrir o Chat', type: 'normal' },
+        { label: 'Sair', type: 'normal' },
+      ]);
+      appIcon.setToolTip('UniChat');
+      appIcon.setContextMenu(contextMenu);
+      return null;
+    })
+    .catch((error) => {
+      throw error;
+    });
 
   // @TODO: Use 'ready-to-show' event
   //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event

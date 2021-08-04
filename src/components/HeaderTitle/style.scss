@@ -1,14 +1,35 @@
 @import '~/src/colors.scss';
 
 .title--bar {
-  -webkit-app-region: drag;
   height: 30px;
-  background-color: $mainBgColor;
+  background-color: $primaryColor;
   display: flex;
   align-items: center;
   box-sizing: border-box;
   padding: 0 5px;
   justify-content: space-between;
+  color: $lightColor;
+  .left {
+    flex: 1;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 5px;
+    box-sizing: border-box;
+    .menu--icon {
+      fill: $lightColor;
+      width: 20px;
+      opacity: 0.7;
+    }
+    .title {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      // background-color: $lightColor;
+      user-select: none;
+      -webkit-app-region: drag;
+    }
+  }
   .right {
     display: flex;
     gap: 1px;
@@ -17,14 +38,16 @@
     }
   }
 }
-button.window-btn {
+.window-btn {
   height: 30px;
   padding: 0 15px;
-  background-color: $chatTitleButtonColor;
+  background-color: $primaryLighterColor;
   border: none;
-  color: $mainLightColor;
+  color: $lightColor;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease-in-out;
 }
 .window-btn:hover {
-  background-color: $chatTitleButtonColor;
-  cursor: pointer;
+  background-color: $primaryLightColor;
 }

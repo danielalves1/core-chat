@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: $mainFontColor;
+  color: $primaryColor;
   padding: 5px 15px;
-  background-color: $mainBgLightColor;
+  background-color: $lightColor;
   font-weight: 800;
   .hc--info {
     display: flex;
@@ -29,6 +29,6 @@
   width: 45px;
   height: 45px;
   border-radius: 40px;
-  border: 2px solid $mainLightColor;
+  border: 2px solid $lightColor;
   object-fit: cover;
 }
