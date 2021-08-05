@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import icon from '../assets/icon.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+
+import { Resizable } from 'react-resizable';
 import { DoneAll, Search } from '@material-ui/icons';
 import './App.global.scss';
 import HeaderChat from './components/HeaderChat';
@@ -10,6 +15,12 @@ import RightContainer from './components/RightContainer';
 import utils from './utils';
 
 const Hello = () => {
+  library.add(fab);
+  const [state, setState] = useState({ height: 60 });
+  const onResize = (e: React.SyntheticEvent<Element, Event>, { size }: any) => {
+    setState({ height: size.height });
+    return e;
+  };
   return (
     <div className="app--container">
       <HeaderTitle />
@@ -113,39 +124,59 @@ const Hello = () => {
             </div>
             <div className="sent">
               <div className="content">
-                <span className="message">
-                  When you're backed against the wall, break the god damn thing
-                  down.
-                </span>
                 <span className="message--info">
                   23:59
                   <DoneAll className="deliver" />
+                </span>
+                <span className="message">
+                  When you're backed against the wall, break the god damn thing
+                  down.
                 </span>
               </div>
             </div>
             <div className="sent">
               <div className="content">
+                <span className="message--info">
+                  23:59
+                  <DoneAll className="deliver" />
+                </span>
                 <span className="message">
                   Excuses don't win championships.
+                </span>
+              </div>
+            </div>
+            <div className="received">
+              <div className="content">
+                <span className="message">
+                  Oh yeah, did Michael Jordan tell you that?
                 </span>
                 <span className="message--info">
                   23:59
                   <DoneAll className="deliver" />
                 </span>
               </div>
-              <div className="photo">
-                <span>FOTO</span>
+            </div>
+          </div>
+          <Resizable
+            minConstraints={[60, 60]}
+            maxConstraints={[300, 300]}
+            height={state.height}
+            axis="y"
+            width={state.height}
+            onResize={onResize}
+            resizeHandles={['n']}
+          >
+            <div className="footer" style={{ height: `${state.height}px` }}>
+              <div className="input">
+                <textarea autoFocus />
+              </div>
+              <div className="options">
+                <button type="button">
+                  <FontAwesomeIcon icon={['fab', 'telegram-plane']} />
+                </button>
               </div>
             </div>
-            <div className="received">
-              <span className="message">
-                Oh yeah, did Michael Jordan tell you that?
-              </span>
-            </div>
-          </div>
-          <div className="input--message">
-            <h3>footer</h3>
-          </div>
+          </Resizable>
         </RightContainer>
       </div>
     </div>

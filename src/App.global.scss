@@ -5,86 +5,28 @@
 @import '~/src/fonts/index.css';
 @import '~/src/colors.scss';
 
-* {
-  .react-resizable {
-    position: relative;
-  }
+.react-resizable {
+  position: relative;
+}
 
-  .react-resizable-handle {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-repeat: no-repeat;
-    background-origin: content-box;
-    box-sizing: border-box;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYwMCIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iNnB4Ij48ZyBvcGFjaXR5PSIwLjMwMiI+PHBhdGggZD0iTSA2IDYgTCAwIDYgTCAwIDQuMiBMIDQgNC4yIEwgNC4yIDQuMiBMIDQuMiAwIEwgNiAwIEwgNiA2IEwgNiA2IFoiIGZpbGw9IiMwMDAwMDAiLz48L2c+PC9zdmc+');
-    background-position: bottom right;
-    padding: 0 3px 3px 0;
-  }
+.react-resizable-handle {
+  position: absolute;
+  width: 95%;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  background-position: top right;
+  padding: 0 3px 3px 0;
+}
 
-  .react-resizable-handle-sw {
-    bottom: 0;
-    left: 0;
-    cursor: sw-resize;
-    transform: rotate(90deg);
-  }
-
-  .react-resizable-handle-se {
-    /* bottom: 0; */
-    right: 0;
-    cursor: w-resize;
-    height: 100%;
-    background: transparent;
-    width: 5px;
-  }
-
-  .react-resizable-handle-nw {
-    top: 0;
-    left: 0;
-    cursor: nw-resize;
-    transform: rotate(180deg);
-  }
-
-  .react-resizable-handle-ne {
-    top: 0;
-    right: 0;
-    cursor: ne-resize;
-    transform: rotate(270deg);
-  }
-
-  .react-resizable-handle-w,
-  .react-resizable-handle-e {
-    top: 50%;
-    margin-top: -10px;
-    cursor: ew-resize;
-  }
-
-  .react-resizable-handle-w {
-    left: 0;
-    transform: rotate(135deg);
-  }
-
-  .react-resizable-handle-e {
-    right: 0;
-    transform: rotate(315deg);
-  }
-
-  .react-resizable-handle-n,
-  .react-resizable-handle-s {
-    left: 50%;
-    margin-left: -10px;
-    cursor: ns-resize;
-  }
-
-  .react-resizable-handle-n {
-    top: 0;
-    transform: rotate(225deg);
-  }
-
-  .react-resizable-handle-s {
-    bottom: 0;
-    transform: rotate(45deg);
-  }
+.react-resizable-handle-n {
+  cursor: ns-resize;
+  top: 0;
+  border-top: 1px solid $primaryColor;
+  opacity: 0.5;
+  height: 2px;
+  width: calc(100% - 60px);
 }
 
 body {
@@ -135,6 +77,8 @@ body {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
   .message {
     max-width: 70%;
     padding: 10px 15px;
@@ -142,6 +86,13 @@ body {
     border-radius: 18px;
     font-size: 0.9rem;
     font-family: 'Roboto Light';
+  }
+  .received .content,
+  .sent .content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   .received {
     padding: 10px;
@@ -162,13 +113,56 @@ body {
       color: $primaryLighterColor;
     }
     .content {
-      display: flex;
+      justify-content: flex-end;
     }
   }
   .message--info {
     display: flex;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     svg {
+      width: 16px;
       margin-left: 5px !important;
+    }
+  }
+}
+.footer {
+  // padding: 5px;
+  background-color: $lightColor;
+  color: $primaryLighterColor;
+  min-height: 40px;
+  display: flex;
+  max-height: 40%;
+  .input {
+    flex: 1;
+    display: flex;
+    background-color: #ccc;
+    textarea {
+      flex: 1;
+      resize: none;
+      border: none;
+      outline: none;
+      padding: 10px;
+      background: $lightColor;
+    }
+  }
+  .options {
+    min-width: 60px;
+    display: flex;
+    & button {
+      background-color: $primaryLighterColor;
+      flex: 1;
+      outline: none;
+      border: none;
+      color: $lightColor;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: $primaryLightColor;
+      }
     }
   }
 }

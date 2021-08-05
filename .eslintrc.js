@@ -5,6 +5,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'react/no-unescaped-entities': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    'jsx-a11y/no-autofocus': 'off',
   },
   parserOptions: {
     ecmaVersion: 2020,
